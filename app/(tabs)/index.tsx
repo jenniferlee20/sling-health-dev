@@ -1,7 +1,10 @@
-import { StyleSheet } from 'react-native';
-
+import { StyleSheet, Button } from 'react-native';
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
+// import { NavigationContainer } from '@react-navigation/native';
+// import { StackNavigationProp } from '@react-navigation/stack';
+// import React, { useEffect, useState } from 'react';
+
 
 export default function TabOneScreen() {
   return (
@@ -12,6 +15,33 @@ export default function TabOneScreen() {
     </View>
   );
 }
+
+// const Dashboard = ({ navigation }) => {
+//     const [data, setData] = useState(null);
+
+//     useEffect(() => {
+//         fetch('http://<your-backend-url>/api/dashboard')
+//             .then(response => response.json())
+//             .then(data => setData(data))
+//             .catch(error => console.error(error));
+//     }, []);
+
+//     return (
+//         <View>
+//             {data && <Text>{JSON.stringify(data)}</Text>}
+//             {/* Render your dashboard components based on data */}
+//             <Button
+//                 title="Go to Details"
+//                 onPress={() => navigation.navigate('Details')}
+//             />
+//         </View>
+//     );
+// };
+
+// // Include this in your NavigationContainer
+// export default Dashboard;
+
+
 
 const styles = StyleSheet.create({
   container: {
