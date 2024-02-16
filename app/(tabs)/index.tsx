@@ -1,45 +1,58 @@
-import { StyleSheet, Button } from 'react-native';
+import { StyleSheet } from 'react-native';
+
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { StackNavigationProp } from '@react-navigation/stack';
-// import React, { useEffect, useState } from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
 
+import DataScreen from "./data";
+import AccountScreen from "./account";
+
+const Tab = createBottomTabNavigator();
 
 export default function TabOneScreen() {
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Tab One</Text>
-      <View style={styles.separator} lightColor="#eee" darkColor="rgba(255,255,255,0.1)" />
-      <EditScreenInfo path="app/(tabs)/index.tsx" />
+       <Text style={styles.title}>Symptoms</Text>
+      <View style={{flexDirection:"row"}}>
+          <View style={{flex:1, alignSelf: 'flex-start', justifyContent: "center"}}>
+              <Text style={styles.symptom}>Blood Pressure</Text>
+          </View>
+          <View style={{flex:2}}>
+              <Text style={styles.symptom}>Headache</Text>
+          </View>
+          <View style={{flex:3}}>
+              <Text style={styles.symptom}>Nausea</Text>
+          </View>
+      </View>
+
+      <Text style={styles.title}>Medications</Text>
+      <View style={{flexDirection:"row"}}>
+          <View style={{flex:1, alignSelf: 'flex-start', justifyContent: "center"}}>
+              <Text style={styles.symptom}>Zoloft</Text>
+          </View>
+          <View style={{flex:2}}>
+              <Text style={styles.symptom}>Clariftin</Text>
+          </View>
+      </View>
+
+      <Text style={styles.title}>Wellness</Text>
+      <View style={{flexDirection:"row"}}>
+          <View style={{flex:1, alignSelf: 'flex-start', }}>
+              <Text style={styles.symptom}>Sleep</Text>
+          </View>
+          <View style={{flex:2}}>
+              <Text style={styles.symptom}>Weight</Text>
+          </View>
+          <View style={{flex:2}}>
+              <Text style={styles.symptom}>Water Intake</Text>
+          </View>
+      </View>
+
     </View>
+    
   );
 }
-
-// const Dashboard = ({ navigation }) => {
-//     const [data, setData] = useState(null);
-
-//     useEffect(() => {
-//         fetch('http://<your-backend-url>/api/dashboard')
-//             .then(response => response.json())
-//             .then(data => setData(data))
-//             .catch(error => console.error(error));
-//     }, []);
-
-//     return (
-//         <View>
-//             {data && <Text>{JSON.stringify(data)}</Text>}
-//             {/* Render your dashboard components based on data */}
-//             <Button
-//                 title="Go to Details"
-//                 onPress={() => navigation.navigate('Details')}
-//             />
-//         </View>
-//     );
-// };
-
-// // Include this in your NavigationContainer
-// export default Dashboard;
 
 
 
@@ -57,5 +70,19 @@ const styles = StyleSheet.create({
     marginVertical: 30,
     height: 1,
     width: '80%',
+  },
+  symptom: {
+    backgroundColor:'#f0f8ff',
+    color: '#000000',
+    height:40,
+    width:70,
+    padding:10,
+    display:'flex',
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'space-around',
+    maxWidth:400,
+    flexWrap:'wrap',
+    marginTop:20
   },
 });
