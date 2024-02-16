@@ -2,13 +2,6 @@ import { StyleSheet } from 'react-native';
 
 import EditScreenInfo from '@/components/EditScreenInfo';
 import { Text, View } from '@/components/Themed';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import { NavigationContainer } from '@react-navigation/native';
-
-import DataScreen from "./data";
-import AccountScreen from "./account";
-
-const Tab = createBottomTabNavigator();
 
 export default function TabOneScreen() {
   return (
@@ -48,13 +41,9 @@ export default function TabOneScreen() {
               <Text style={styles.symptom}>Water Intake</Text>
           </View>
       </View>
-
     </View>
-    
   );
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
